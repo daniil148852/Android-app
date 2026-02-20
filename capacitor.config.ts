@@ -5,8 +5,10 @@ const config: CapacitorConfig = {
   appName: 'X-Ray Face AI',
   webDir: 'dist',
   server: {
-    androidScheme: 'https'
-  }
+    androidScheme: 'https',
+    cleartext: true
+  },
+  loggingBehavior: 'debug'
 };
 
 export default config;
