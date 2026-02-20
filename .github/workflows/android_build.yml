@@ -34,6 +34,7 @@ jobs:
 
     - name: Add Capacitor Android Platform
       run: |
+        npm install @capacitor/core @capacitor/cli @capacitor/android
         npx cap add android
         # Inject the custom manifest with permissions
         cp android_manifest_template.xml android/app/src/main/AndroidManifest.xml
@@ -42,6 +43,7 @@ jobs:
     - name: Build APK (Debug)
       run: |
         cd android
+        chmod +x gradlew
         ./gradlew assembleDebug
 
     - name: Upload APK Artifact
